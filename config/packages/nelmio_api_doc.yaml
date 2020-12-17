@@ -4,6 +4,37 @@ nelmio_api_doc:
             title: My App
             description: This is an awesome app!
             version: 1.0.0
+        paths:
+          /api/token:
+            post:
+              tags:
+                - Authentication
+              summary: 'Get token'
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        username:
+                          type: string
+                        password:
+                          type: string
+                      example:
+                        username: 'admin@photomap.com'
+                        password: 'password'
+              responses:
+                '200':
+                  description: 'OK'
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          token:
+                            type: string
+                        example:
+                          token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDgyMjg5OTgsIm'
     areas: # to filter documented areas
         path_patterns:
             - ^/api(?!/doc) # Accepts routes under /api except /api/doc
