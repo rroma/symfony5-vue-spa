@@ -10,6 +10,7 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="app_index")
+     * @Route("/{route}", name="vue_index", requirements={"route"="^(?!.*_wdt|_profiler|api).+"})
      */
     public function index(): Response
     {
