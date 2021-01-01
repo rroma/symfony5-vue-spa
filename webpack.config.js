@@ -9,7 +9,8 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-    .addEntry('app', './assets/app.js')
+    .addEntry('app', './assets/js/app.js')
+    .addStyleEntry('style', './assets/style/app.scss')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
@@ -27,7 +28,9 @@ Encore
         config.useBuiltIns = 'usage';
         config.corejs = 3;
     })
-   .enableVueLoader()
+    .enableSassLoader()
+    .enablePostCssLoader()
+    .enableVueLoader()
 ;
 
 module.exports = Encore.getWebpackConfig();
