@@ -1,1 +1,1 @@
-# symfony5-vue-spa
+# App skeleton for Symfony API + Vue SPA
